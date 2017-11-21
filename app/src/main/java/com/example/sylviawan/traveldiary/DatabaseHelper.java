@@ -28,7 +28,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     /*USER TABLE COLUMNS*/
     private static final String USER_ID = "userid";
     private static final String USER_NAME = "username";
-    private static final String USER_EMAIL = "useremail";
     private static final String USER_PASSWORD = "userpassword";
 
     /*ENTRIES TABLE COLUMNS*/
@@ -58,7 +57,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 USER_ID + " INTEGER PRIMARY KEY," + //UserID is a Primary Key in USER Tables
                 USER_NAME + " TEXT," + //Username used to LOGIN
                 USER_PASSWORD + " TEXT," + //User password used to LOGIN
-                USER_EMAIL + " TEXT," + //Displayed on profile
                 ")";
 
         String CREATE_ENTRIES_TABLE = "CREATE TABLE " + TABLE_USERENTRIES +
@@ -85,7 +83,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("USER_NAME", name);
-        contentValues.put("USER_EMAIL", email);
         contentValues.put("USER_PASSWORD", password);
         contentValues.put("USERID", userno);
         long res = db.insert(TABLE_USER, null, contentValues);
@@ -114,7 +111,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("USER_NAME", name);
-        contentValues.put("USER_EMAIL", email);
         contentValues.put("USER_PASSWORD", password);
         contentValues.put("USER_ID", userno);
         db.update(TABLE_USER, contentValues, "_id = ?", new String[]{id});
