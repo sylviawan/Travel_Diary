@@ -17,12 +17,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.384" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Touch to continue"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="292dp" />
-
 </android.support.constraint.ConstraintLayout>

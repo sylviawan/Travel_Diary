@@ -79,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add"
-        tools:layout_editor_absoluteX="58dp"
+        tools:layout_editor_absoluteX="74dp"
         tools:layout_editor_absoluteY="403dp" />
 
     <Button
@@ -89,5 +89,14 @@
         android:text="Clear"
         tools:layout_editor_absoluteX="222dp"
         tools:layout_editor_absoluteY="403dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="180dp"
+        android:layout_height="35dp"
+        android:ems="10"
+        android:inputType="date"
+        tools:layout_editor_absoluteX="87dp"
+        tools:layout_editor_absoluteY="137dp" />
 
 </android.support.constraint.ConstraintLayout>

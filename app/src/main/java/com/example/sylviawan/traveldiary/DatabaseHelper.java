@@ -2,6 +2,7 @@ package com.example.sylviawan.traveldiary;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
@@ -26,7 +27,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TABLE_USERENTRIES = "entries";
 
     /*USER TABLE COLUMNS*/
-    private static final String USER_ID = "userid";
     private static final String USER_NAME = "username";
     private static final String USER_PASSWORD = "userpassword";
 
@@ -42,6 +42,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // constructor
     public DatabaseHelper(Context context) {
+
         super(context, DATABASE_NAME, null, 1);
     }
 
@@ -54,7 +55,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_USERS_TABLE = "CREATE TABLE " + TABLE_USER +
                 "(" +
-                USER_ID + " INTEGER PRIMARY KEY," + //UserID is a Primary Key in USER Tables
                 USER_NAME + " TEXT," + //Username used to LOGIN
                 USER_PASSWORD + " TEXT," + //User password used to LOGIN
                 ")";
@@ -79,7 +79,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERENTRIES);
         }
     }
-    public boolean insertUser(String name, String password, String email, String userno) {
+    public boolean insertUser(String name, String password, String userno) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("USER_NAME", name);
@@ -133,4 +133,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.delete(table, "_id = ?", new String[]{id});
     }
 
+    public Cursor search(String query) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery(query, null);
+        return res;
+    }
 }
