@@ -1,60 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sylviawan.traveldiary.CreateProfile">
+    android:background="@drawable/bkground1"
+    tools:context="com.example.sylviawan.traveldiary.CreateProfile" >
+
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/textView8"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="53dp"
         android:text="Create an account"
-        android:textSize="18sp"
+        android:textSize="24sp"
         tools:layout_editor_absoluteX="29dp"
         tools:layout_editor_absoluteY="55dp" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Username:"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="165dp" />
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username:"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="165dp"
+            android:layout_marginBottom="48dp"
+            android:layout_above="@+id/cUser"
+            android:layout_toLeftOf="@+id/btnCreate"
+            android:layout_toStartOf="@+id/btnCreate" />
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Password:"
-        tools:layout_editor_absoluteX="29dp"
-        tools:layout_editor_absoluteY="246dp" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password:"
+            tools:layout_editor_absoluteX="29dp"
+            tools:layout_editor_absoluteY="246dp"
+            android:layout_marginBottom="19dp"
+            android:layout_above="@+id/cPass"
+            android:layout_alignRight="@+id/textView8"
+            android:layout_alignEnd="@+id/textView8" />
 
-    <EditText
-        android:id="@+id/cPass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="233dp" />
+        <EditText
+            android:id="@+id/cPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
+            tools:layout_editor_absoluteX="103dp"
+            tools:layout_editor_absoluteY="233dp"
+            android:layout_marginBottom="54dp"
+            android:layout_above="@+id/btnCreate"
+            android:layout_alignLeft="@+id/cUser"
+            android:layout_alignStart="@+id/cUser" />
 
-    <EditText
-        android:id="@+id/cUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="154dp" />
+        <EditText
+            android:id="@+id/cUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="103dp"
+            tools:layout_editor_absoluteY="154dp"
+            android:layout_marginBottom="60dp"
+            android:layout_above="@+id/textView9"
+            android:layout_alignLeft="@+id/textView9"
+            android:layout_alignStart="@+id/textView9" />
 
     <Button
         android:id="@+id/btnCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="65dp"
+        android:onClick="onCreateAccClick"
         android:text="Create"
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="327dp" />
 
-</android.support.constraint.ConstraintLayout>
+    </RelativeLayout>

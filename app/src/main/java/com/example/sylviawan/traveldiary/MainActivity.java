@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        ADD SPLASH_TIMEOUT
+        // ADD SPLASH_TIMEOUT to go to Log in Activity
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Profile extends AppCompatActivity {
 
@@ -14,13 +15,17 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        addentry = (Button) findViewById(R.id.btnAddEnt);
+        addentry = (Button) findViewById(R.id.btnToAddEntry);
         entries = (Button) findViewById(R.id.btnToEntries);
         settings = (Button) findViewById(R.id.btnToSet);
         logout = (Button) findViewById(R.id.btnLogOut);
 
-        //staff_id is final as it cannot and will not be edited or changed
-        addentry.setOnClickListener(new View.OnClickListener() {
+
+        // Four main buttons for the user to choose
+        // from: Add Entry, Entries, Settings and Logout
+
+        addentry.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Profile.this, AddEntry.class);
@@ -28,7 +33,8 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-        entries.setOnClickListener(new View.OnClickListener() {
+        entries.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Profile.this, Entries.class);
@@ -36,7 +42,8 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-        settings.setOnClickListener(new View.OnClickListener() {
+        settings.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(), Settings.class);
@@ -44,11 +51,14 @@ public class Profile extends AppCompatActivity {
             }
         });
 
-        logout.setOnClickListener(new View.OnClickListener() {
+        logout.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Profile.this, MainActivity.class);
                 startActivity(i);
+                Toast logout = Toast.makeText(Profile.this, "Logging out", Toast.LENGTH_SHORT);
+                logout.show();
             }
         });
     }
